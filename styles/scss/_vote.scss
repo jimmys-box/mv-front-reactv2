@@ -106,19 +106,21 @@ margin: auto;
     background-color: #0A004C;
     padding: 40px;
     color: white;
+    margin-right: 30px;
 }
 .confirmRight {
     max-width: 35%;
     background-color: white;
     padding: 40px;
     color: #0A004C;
+    margin-left: 30px;
 }
 .thanksVote h4 {
     font-weight: bold;
 font-size: 20px;
 line-height: 24px;
 }
-.thanksVote p {
+.thanksVote p, .confirmLeft p, .confirmRight p {
     font-size: 14px;
     line-height: 16px;
 }
@@ -212,6 +214,25 @@ line-height: 24px;
   .backToVoteBtn, .warningVote {
     width: 300px;
     margin: auto;
+}
+.confirmRowTwo {
+    flex-direction: column;
+}
+.confirmRowOne > .col > .voteMobile {
+    border: 2px solid #0A004C;
+    box-shadow: 0px 4px 0px 0px #0A004C;
+}
+
+.confirmLeft, .confirmRight {
+    max-width: 100%;
+    margin: auto;
+    padding: 24px;
+}
+.confirmH2 {
+margin: 24px auto;
+}
+.confirmRight div, .confirmRight button {
+    width: 100%;
 }
 }
 @media screen and (max-width: 550px) {

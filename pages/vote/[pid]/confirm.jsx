@@ -121,27 +121,31 @@ const VoteSuccess = ({ title, invitationOnly, pid, err }) => {
         }}
       >
 
-        <Row className="mt-4">
+        <Row className="mt-4 px-3 confirmRowOne">
           <Col className="text-center">
             <h2 className="confirmH2">{t("resource.voteSuccess")}</h2>
             <Button className="voteDesktop mx-auto mt-4 mb-5">
               {t("Voir les résultats")}
               <img src="/arrow-white.svg" className="mr-2" />
             </Button>
+            <Button className="voteMobile mx-auto mt-4 mb-5">
+              {t("Voir les résultats")}
+              <img src="/arrow-white.svg" className="mr-2" />
+            </Button>
           </Col>
         </Row>
-        <Row className="justify-content-center mb-5">
-          <Col className="confirmLeft mr-5">
+        <Row className="confirmRowTwo justify-content-center mb-5 px-4">
+          <Col className="confirmLeft">
             <h2 className="confirmH2 mb-4">{t("Découvrez le jugement majoritaire")}</h2>
             <p>{t("créé par des chercheurs français, le jugement majoritaire est un mode de scrutin qui améliore l’expressivité des électeurs et fournit le meilleur consensus.")}</p>
             <Link href="/"><div>{t("En savoir plus")}<FontAwesomeIcon icon={faChevronRight} className="ml-2" /></div></Link>
           </Col>
-          <Col className="confirmRight ml-5">
+          <Col className="confirmRight">
             <Row className="align-items-center">
-              <Col md="7" className="pr-0">
+              <Col xs="8" className="pr-0">
                 <h2 className="confirmH2">{t("Soutenez Mieux Voter")}</h2>
               </Col>
-              <Col md="5" className="text-right">
+              <Col xs="4" className="text-right">
                 <img src="/logo-red-blue.svg" alt="logo of Mieux Voter" />
               </Col>
             </Row>
