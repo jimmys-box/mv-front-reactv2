@@ -485,6 +485,8 @@ line-height: 32px;
     justify-content: center;
     background-color: #2400FD;
     background-image: url('/background-finish-page.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .main-animation {
     margin: auto;

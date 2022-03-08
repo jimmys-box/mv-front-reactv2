@@ -10,7 +10,7 @@
 .modalVote {
     width: 100vw;
     max-width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #17048e;
     background-image: url('/back.svg');
     background-size: 100%;
@@ -18,7 +18,7 @@
     margin: 0px!important;
     display: flex;
 }
-.modalVote > .modal-content > div > .modalVoteHeader, .modalVote > .modal-content > div > .modalVoteBody {
+.modalVoteHeader, .modalVoteBody {
     width: fit-content;
     margin: auto;
 }
@@ -66,10 +66,67 @@
 .cardVoteGrades {
     display: flex;
 }
-
-
-
-
+.warningVote {
+    background-color: #2400FD;
+    color: white;
+}
+.backToVoteBtn, .warningVote {
+    width: 100%;
+    margin: auto;
+}
+.noRateVote {
+    max-width: 550px;
+}
+.noRateVote > .modal-content {
+    padding: 40px 32px;
+}
+.noRateVote > .modal-content > .modal-header h5 {
+    font-size: 28px;
+    line-height: 32px;
+    color: #2400FD;
+    font-weight: 500;
+}
+.noRateVote > .modal-content > .modal-body {
+    font-size: 16px;
+    line-height: 24px;
+    color: #0A004C;
+    font-weight: 500;
+}
+.vote-animation {
+    z-index: 5;
+    position: relative;
+}
+.confirmH2 {
+    font-size: 32px;
+line-height: 32px;
+margin: auto;
+}
+.confirmLeft {
+    max-width: 35%;
+    background-color: #0A004C;
+    padding: 40px;
+    color: white;
+}
+.confirmRight {
+    max-width: 35%;
+    background-color: white;
+    padding: 40px;
+    color: #0A004C;
+}
+.thanksVote h4 {
+    font-weight: bold;
+font-size: 20px;
+line-height: 24px;
+}
+.thanksVote p {
+    font-size: 14px;
+    line-height: 16px;
+}
+@media screen and (max-width: 1440px) {
+    .sectionOneVoteContent {
+        max-width: 70%;
+    }
+}
 
 @media screen and (min-width: 900px) {
     .voteMobile {
@@ -77,6 +134,9 @@
     }
 }
 @media screen and (max-width: 899px) {
+    .sectionOneVoteContent {
+        max-width: 80%;
+    }
     .voteDesktop {
         display: none;
     }
@@ -135,14 +195,27 @@
     margin-left: 7.5px;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: white;
+    cursor: pointer;
   }
-  
- 
-  
   .embla__dot.is-selected {
     background-color: white;
     opacity: 1;
     color: #0A004C;
   }
+  .btn-background {
+    background-color:#291797;
+    width: 100%;
+    display: flex;   
+  }
+  .backToVoteBtn, .warningVote {
+    width: 300px;
+    margin: auto;
+}
+}
+@media screen and (max-width: 550px) {
+.modalVoteBody {
+    width: auto;
+}
 }

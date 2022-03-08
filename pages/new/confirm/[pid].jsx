@@ -23,7 +23,7 @@ import Error from "@components/Error";
 import Facebook from "@components/banner/Facebook";
 import Twitter from "@components/banner/Twitter";
 import config from "../../../next-i18next.config.js";
-import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
+import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion';
 export async function getServerSideProps({ query: { pid }, locale }) {
   let [details, translations] = await Promise.all([
     getDetails(pid),

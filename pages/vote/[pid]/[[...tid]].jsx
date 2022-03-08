@@ -15,6 +15,7 @@ import config from "../../../next-i18next.config.js";
 import Footer from '@components/layouts/Footer'
 import useEmblaCarousel from 'embla-carousel-react'
 import { DotButton, PrevButton, NextButton } from "../../../components/form/EmblaCarouselButtons";
+import VoteButtonWithConfirm from "../../../components/form/VoteButtonWithConfirm";
 
 const shuffle = (array) => array.sort(() => Math.random() - 0.5);
 
@@ -83,11 +84,9 @@ const VoteBallot = ({ candidates, title, numGrades, pid, err, token }) => {
     setJudgments(newJudgments);
   };
 
-  // const handleSubmitWithoutAllRate = () => {
-  //   toast.error(t("You have to judge every candidate/proposal!"), {
-  //     position: toast.POSITION.TOP_CENTER,
-  //   });
-  // };
+  const handleSubmitWithoutAllRate = () => {
+    alert(t("You have to judge every candidate/proposal!"));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -109,6 +108,9 @@ const VoteBallot = ({ candidates, title, numGrades, pid, err, token }) => {
   const [visibled, setVisibility] = useState(false);
   const toggleMobile = () => setVisibilityMobile(!visibledMobile)
   const [visibledMobile, setVisibilityMobile] = useState(false);
+  const toggleDesktop = () => setVisibilityDesktop(!visibledDesktop)
+  const [visibledDesktop, setVisibilityDesktop] = useState(false);
+
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -174,7 +176,7 @@ const VoteBallot = ({ candidates, title, numGrades, pid, err, token }) => {
                   <Button
                     type="submit"
                     className="btn btn-block btn-secondary voteDesktop"
-                    onClick={toggle}
+                    onClick={toggleDesktop}
                   >
                     {t("Je participe au vote")}
                     <img src="/arrow-white.svg" className="mr-2" />
@@ -274,9 +276,9 @@ const VoteBallot = ({ candidates, title, numGrades, pid, err, token }) => {
         <Footer />
       </Container>
       <Modal
-        fullscreen
-        isOpen={visibled}
-        toggle={toggle}
+
+        isOpen={visibledDesktop}
+        toggle={toggleDesktop}
         className="modalVote voteDesktop"
       ><div className="my-auto">
           <ModalHeader className="modalVoteHeader">
@@ -386,14 +388,7 @@ const VoteBallot = ({ candidates, title, numGrades, pid, err, token }) => {
               <Row>
                 <Col className="text-center">
                   {judgments.length !== candidates.length ? (
-                    <Button
-                      type="button"
-                      // onClick={handleSubmitWithoutAllRate}
-                      className="btn btn-transparent mt-5"
-                    >
-                      <FontAwesomeIcon icon={faCheck} className="mr-2" />
-                      {t("Submit my vote")}
-                    </Button>
+                    <VoteButtonWithConfirm className="btn btn-transparent my-3" action={handleSubmitWithoutAllRate} onClick={toggle} />
                   ) : (
                     <Button type="submit" className="mt-5 btn btn-transparent">
                       <FontAwesomeIcon icon={faCheck} className="mr-2" />
@@ -416,7 +411,7 @@ const VoteBallot = ({ candidates, title, numGrades, pid, err, token }) => {
 
 
       <Modal
-        fullscreen
+
         isOpen={visibledMobile}
         toggle={toggleMobile}
         className="modalVote voteMobile"
@@ -532,7 +527,7 @@ const VoteBallot = ({ candidates, title, numGrades, pid, err, token }) => {
                             Next
                           </div>
                         </div>
-                        
+
                       </div>
 
                     );
@@ -540,47 +535,37 @@ const VoteBallot = ({ candidates, title, numGrades, pid, err, token }) => {
                   })}
                 </div>
                 <div className="embla__dots">
-                          {scrollSnaps.map((_, index) => (
-                            <div>
-                            <DotButton
-                              key={index}
-                              selected={index === selectedIndex}
-                              onClick={() => scrollTo(index)}
-                              value="EE"
-                            /><p>{index+1}</p></div>
-                          ))}
-                        </div>
+                  {scrollSnaps.map((_, index) => (
+
+                    <DotButton
+                      key={index}
+                      selected={index === selectedIndex}
+                      onClick={() => scrollTo(index)}
+                      value={index + 1}
+                    />
+                  ))}
+                </div>
               </div>
-              <Row>
-                <Col className="text-center">
-                  {judgments.length !== candidates.length ? (
-                    <Button
-                      type="button"
-                      // onClick={handleSubmitWithoutAllRate}
-                      className="btn btn-transparent mt-5"
-                    >
-                      <FontAwesomeIcon icon={faCheck} className="mr-2" />
-                      {t("Submit my vote")}
-                    </Button>
-                  ) : (
-                    <Button type="submit" className="mt-5 btn btn-transparent">
-                      <FontAwesomeIcon icon={faCheck} className="mr-2" />
-                      {t("Submit my vote")}
-                    </Button>
-                  )}
-                </Col>
-              </Row>
+
             </form>
           </ModalBody>
         </div>
+        <Row className="btn-background mx-0">
+          <Col className="text-center">
+            {judgments.length !== candidates.length ? (
+              <VoteButtonWithConfirm className="btn btn-transparent my-3" action={handleSubmitWithoutAllRate} onClick={toggle} />
+            ) : (
+
+              <Button type="submit" className="my-3 btn btn-transparent">
+                <FontAwesomeIcon icon={faCheck} className="mr-2" />
+                {t("Submit my vote")}
+              </Button>
+
+            )}
+          </Col>
+        </Row>
         <Footer />
       </Modal>
-
-
-
-
-
-
 
 
 
