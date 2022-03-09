@@ -5476,6 +5476,11 @@
     "prop-types" "^15.6.1"
     "shallow-equal" "^1.2.1"
 
+"react-simple-timestamp-to-date@^1.0.3":
+  "integrity" "sha512-Vx9Anf0UWR7jm+FrRbxvq/11vEYWsIjsBWdBjaIYJDiewBQLWwC0LI6+4E6t05/k4iigut4bPcZ5+Hzj9LrwAQ=="
+  "resolved" "https://registry.npmjs.org/react-simple-timestamp-to-date/-/react-simple-timestamp-to-date-1.0.3.tgz"
+  "version" "1.0.3"
+
 "react-sortable-hoc@^2.0.0":
   "integrity" "sha512-JZUw7hBsAHXK7PTyErJyI7SopSBFRcFHDjWW5SWjcugY0i6iH7f+eJkY8cJmGMlZ1C9xz1J3Vjz0plFpavVeRg=="
   "resolved" "https://registry.npmjs.org/react-sortable-hoc/-/react-sortable-hoc-2.0.0.tgz"

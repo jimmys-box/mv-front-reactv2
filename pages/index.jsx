@@ -6,7 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { Container, Row, Col, Button, Input } from "reactstrap";
 import config from "../next-i18next.config.js";
-import Footer from '@components/layouts/Footer'
+import Footer from '@components/layouts/Footer';
 import VoteBallot from './vote/[pid]/[[...tid]]';
 import CandidatesField from '../components/form/CandidatesField';
 export const getStaticProps = async ({ locale }) => ({
