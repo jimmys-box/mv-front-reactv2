@@ -290,16 +290,7 @@ li.sortable {
   transform-style: 2s;
 }
 
-/** collapse  **/
-.panel-title:after {
-  content: "+";
-  float: right;
-  font-size: 28px;
-  font-weight: 900;
-}
-.panel-title.collapsed:after {
-  content: "-";
-}
+
 
 /** table profiles **/
 .profiles thead,
@@ -312,17 +303,6 @@ li.sortable {
   color: $mv-blue-color;
 }
 
-.median {
-  border-width: 0 3px 0 0;
-  border-style: dashed;
-  border-color: #000;
-  min-height: 30px;
-  width: 1px;
-  position: absolute;
-  left: 50%;
-  margin-top: -15px;
-  margin-left: 13px;
-}
 
 /** react multi email **/
 .react-multi-email > span[data-placeholder] {
@@ -348,23 +328,8 @@ li.sortable {
   top: 0;
 }
 
-/** result **/
-ol.result > li{
-  font-size:1rem;
-  font-weight:normal;
-}
-ol.result > li:nth-child(1){
-  font-size:1.75rem;
-  font-weight:bold;
-}
 
-ol.result > li:nth-child(2){
-  font-size:1.5rem;
-}
 
-ol.result > li:nth-child(3){
-  font-size:1.25rem;
-}
 
 
 /** GLOBALS **/
